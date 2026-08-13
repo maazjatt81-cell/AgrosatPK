@@ -1,0 +1,16 @@
+{
+  "name": "AgroSat Pakistan by Muhammad Noman Hanjra",
+  "short_name": "AgroSat",
+  "description": "NASA Space Apps Challenge 2026 - AI Field Analytics",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#050810",
+  "theme_color": "#00f3ff",
+  "icons": [
+    {
+      "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOTIiIGhlaWdodD0iMTkyIiB2aWV3Qm94PSIwIDAgMTkyIDE5MiI+PHJlY3Qgd2lkdGg9IjE5MiIgaGVpZ2h0PSIxOTIiIGZpbGw9IiMwNTA4MTAiLz48dGV4dCB4PSI1MCIgeT0iMTE1IiBmaWxsPSIjMDBmM2ZmIiBmb250LXNpemU9IjY0IiBmb250LWZhbWlseT0iQXJpYWwiPk5IPC90ZXh0Pjwvc3ZnPg==",
+      "sizes": "192x192",
+      "type": "image/svg+xml"
+    }
+  ]
+}

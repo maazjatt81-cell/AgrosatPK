@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>EcoPulse / AgroSat Pakistan</title>
+    <link rel="manifest" href="manifest.json" />
+    <meta name="theme-color" content="#0a0f1c" />
+
+    <!-- Leaflet CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body
+    oncontextmenu="return false;"
+    onselectstart="return false;"
+    ondragstart="return false;"
+  >
+    <!-- Top Navigation -->
+    <nav class="navbar">
+      <div class="logo-container">
+        <div class="nh-logo">N-H</div>
+        <div class="brand">
+          <h1>AgroSat <span>Pakistan</span></h1>
+          <p>Advanced NASA Field Analytics</p>
+        </div>
+      </div>
+      <div id="status-badge" class="status online">● Online</div>
+    </nav>
+
+    <!-- Location Controls -->
+    <div class="location-controls">
+      <input
+        type="text"
+        id="city-input"
+        placeholder="Shehar ka naam (e.g., Okara, Sahiwal)..."
+      />
+      <button class="action-btn" onclick="searchCity()">🔍 Search</button>
+      <button class="action-btn gps-btn" onclick="useLiveLocation()">
+        📍 Live Location
+      </button>
+    </div>
+
+    <!-- Main App Grid -->
+    <main class="dashboard">
+      <!-- Language Toggle Button -->
+      <button id="lang-toggle-btn" onclick="toggleLanguage()">
+        English / اردو
+      </button>
+
+      <!-- PlantVillage Disease Scanner Section -->
+      <div class="disease-scanner-box">
+        <h3>🌱 PlantVillage AI Leaf Scanner (38 Diseases, 95%+ Accuracy)</h3>
+        <input type="file" id="leaf-image-input" accept="image/*" />
+        <button onclick="scanLeafDisease()">Scan Leaf Disease</button>
+      </div>
+      <!-- NASA Map Section -->
+      <section class="map-section glass-panel">
+        <div class="panel-header">
+          <h2>🛰️ Satellite Field Map (Map par Click Karein)</h2>
+          <span id="current-location-text" class="badge">Okara, Punjab</span>
+        </div>
+        <div id="map"></div>
+      </section>
+
+      <!-- Analytics & AI Assistant Section -->
+      <section class="data-section">
+        <!-- AI Voice Assistant Card -->
+        <div class="glass-panel ai-card">
+          <div class="ai-header">
+            <h2>🎙️ Smart Kisan AI</h2>
+            <button id="ai-btn" class="glow-btn" onclick="speakAgroAdvisory()">
+              <span class="icon">▶</span> Suniye
+            </button>
+          </div>
+          <p id="ai-text" class="ai-subtext">Data load ho raha hai...</p>
+        </div>
+        <!-- CHATBOT TRIGGER BUTTON -->
+            <h3>💬 Kisan AI Voice & Text Chat</h3>
+            <div class="chat-trigger-box">
+                <input type="text" id="chat-input" placeholder="Sawal poochein (misal: Pani kab lagana hai?)">
+                <button class="chat-send-btn" onclick="askKisanChatbot()">AI se Poochein</button>
+            </div>
+        </div>
+
+        <!-- Smart Recommendations -->
+        <div class="smart-grid">
+          <div class="glass-panel info-box">
+            <span>🌱 Fasal Ka Mashwara</span>
+            <h4 id="crop-rec">Calculating...</h4>
+          </div>
+          <div class="glass-panel info-box">
+            <span>🌧️ Barish Ke Chance</span>
+            <h4 id="rain-chance">--%</h4>
+          </div>
+          <div class="glass-panel info-box">
+            <span>💧 Pani Dene Ka Waqt</span>
+            <h4 id="water-sched">Calculating...</h4>
+          </div>
+        </div>
+
+        <!-- Weather Metrics -->
+        <div class="metrics-grid">
+          <div class="glass-panel metric">
+            <span class="label">Temperature</span>
+            <h3 id="m-temp">--°C</h3>
+          </div>
+          <div class="glass-panel metric">
+            <span class="label">Rainfall</span>
+            <h3 id="m-rain">-- mm</h3>
+          </div>
+          <div class="glass-panel metric">
+            <span class="label">Soil Temp</span>
+            <h3 id="m-soil-temp">--°C</h3>
+          </div>
+          <div class="glass-panel metric">
+            <span class="label">Soil Moisture</span>
+            <h3 id="m-soil-moist">--%</h3>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer Copyright -->
+    <footer>
+      <p>
+        Premium System Designed & Developed by <b>Muhammad Noman Hanjra</b> |
+        NASA Space Apps 2026
+      </p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

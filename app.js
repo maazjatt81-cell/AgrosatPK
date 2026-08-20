@@ -4,6 +4,15 @@ let globalWeatherData = null;
 let currentCityName = "Okara, Punjab";
 let currentLang = "ur"; // Default Language Urdu
 
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker
+      .register("/sw.js")
+      .then((reg) => console.log("Service Worker Registered!", reg))
+      .catch((err) => console.log("Service Worker Registration Failed!", err));
+  });
+}
+
 const GEMINI_API_KEY = "AQ.Ab8RN6L_CoaJPH4kXsxKN5Mr7GWNboahPsHQqHseh";
 
 // Initialize Map
